@@ -72,10 +72,13 @@ function removemodal() {
 	document.getElementById('onoff').classList.remove('activer');
 }
 function next() {
-	if (margin < 300) {
+	if (margin > -300) {
 		document.getElementById('img33').style.marginRight = `${(margin -= 100)}%`;
-	} else {
+		console.log(margin)
+	} else if(margin === -300) {
+		margin = 0
 		document.getElementById('img33').style.marginRight = '0%';
+		console.log(margin)
 	}
 }
 function prev() {
