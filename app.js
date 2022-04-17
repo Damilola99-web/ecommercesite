@@ -57,11 +57,37 @@ function imgd() {
 }
 function cartopen() {
 	let x = document.getElementById('caco');
-	if (x.style.display === 'block') {
+	if (x.style.display === 'flex') {
 		x.style.display = 'none';
 	} else {
-		x.style.display = 'block';
+		x.style.display = 'flex';
 	}
+	if (document.getElementById('notify').innerHTML == 0) {
+		document.querySelector('.cacocont').innerHTML = '<h4>No items in cart</h4>'
+	}
+	else {
+		document.querySelector('.cacocont').innerHTML = `
+		<div class="cartDetails">
+			<div class="mainDetails">
+				<img src="images/image-product-1-thumbnail.jpg" alt="" class="itemImage">
+				<div class="name">
+					<p>Atumn limited edition...</p>
+					<p>$125 x ${parseInt(document.getElementById('notify').innerHTML)}   <span>($${125 * parseInt(document.getElementById('notify').innerHTML)})</span></p>
+				</div>
+				<img src="images/icon-delete.svg" alt="" class="delete">
+			</div>
+			<button id = 'checkout'>Checkout</button>
+		</div>
+		`
+	}
+	document.querySelector('.delete').addEventListener('click', ()=> {
+		document.querySelector('.cacocont').innerHTML = '<h4>No items in cart</h4>'
+		document.getElementById('notify').innerHTML = 0
+	})
+	document.querySelector('#checkout').addEventListener('click', ()=> {
+		document.querySelector('.cacocont').innerHTML = '<h4>No items in cart</h4>'
+		document.getElementById('notify').innerHTML = 0
+	})
 }
 let margin = 0;
 
@@ -71,21 +97,28 @@ function modal() {
 function removemodal() {
 	document.getElementById('onoff').classList.remove('activer');
 }
-function next() {
-	if (margin > -300) {
-		document.getElementById('img33').style.marginRight = `${(margin -= 100)}%`;
-		console.log(margin)
-	} else if(margin === -300) {
-		margin = 0
-		document.getElementById('img33').style.marginRight = '0%';
-		console.log(margin)
-	}
-}
-function prev() {
-	// document.getElementById('img33').style.marginRight = `${(margin += 100)}%`;
-	if (margin > 0) {
-		document.getElementById('img33').style.marginRight = `${(margin += 100)}%`;
-	} else {
-		document.getElementById('img33').style.marginRight = '0%';
-	}
-}
+// function next() {
+// 	if (margin > -300) {
+// 		document.getElementById('img33').style.marginRight = `${(margin -= 100)}%`;
+// 		console.log(margin)
+// 	} else if(margin === -300) {
+// 		margin = 0
+// 		document.getElementById('img33').style.marginRight = '0%';
+// 		console.log(margin)
+// 	}
+// }
+// function prev() {
+// 	// document.getElementById('img33').style.marginRight = `${(margin += 100)}%`;
+// 	if (margin > 0) {
+// 		document.getElementById('img33').style.marginRight = `${(margin += 100)}%`;
+// 	} else {
+// 		document.getElementById('img33').style.marginRight = '0%';
+// 	}
+// }
+document.querySelector('.menu').addEventListener('click', ()=> {
+	document.querySelector('.sidebarleft').style.display = 'block'
+})
+document.querySelector('.close').addEventListener('click', ()=> {
+	document.querySelector('.sidebarleft').style.display = 'none'
+})
+

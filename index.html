@@ -11,9 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&display=swap" rel="stylesheet">
 </head>
 <body style="max-width: 2000px; width: 100%; margin: auto;">
-   
+    <div class="sidebarleft">
+        <img src="images/icon-close.svg" alt="" class="close">
+        <ul>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
     <div class="headd">
-        <header>sneakers</header>
+        
+        <header><img src="images/icon-menu.svg" alt="" class="menu">sneakers</header>
         <nav>
             <ul>
                 <li><a href="#">Collections</a></li>
@@ -27,9 +37,11 @@
             <div class="cartimg">
                 <img src="./images/icon-cart.svg" alt="icon-cart" id="img1" class="imga" onclick="cartopen()">
                 <span id="notify" class="notify"></span>
-                <div id="caco">
-                    <h3 id="cart">Cart</h3>
-                </div>
+                
+            </div>
+            <div id="caco">
+                <h3 id="cart">Cart</h3><div class="line"></div>
+                <div class="cacocont"></div>
             </div>
             <img src="./images/image-avatar.png" alt="image-avatar" id="img2" >
         </div>
@@ -83,6 +95,7 @@
                 <img src="./images/image-product-4.jpg" alt="image-product-4" class="img5 ilu" onclick="imgd()" id="lold">
             </div>
         </div>
+        
    <script src="app.js"></script>
 </body>
 </html>
